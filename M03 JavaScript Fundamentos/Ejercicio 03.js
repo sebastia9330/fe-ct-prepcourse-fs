@@ -38,8 +38,7 @@ function esPar(num) {
    // Retorna True si "num" es par.
    // De lo contrario, retorna False.
    // Tu código:
-   par = num % 2
-   return par < 0
+   return (num % 2) == 0;
 }
 
 function esImpar(num) {
