@@ -172,6 +172,14 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
+   if (num <= 0 || num == 1 || num == 4) {
+      return false;
+   }   
+	for (var x = 2; x < num / 2; x++) {
+		if (num % x == 0) {
+         return false;}
+	}
+	return true;
 }
 
 function esVerdadero(valor) {
