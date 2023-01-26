@@ -56,24 +56,46 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar True si está, o False si no está.
    // Tu código:
+   for(var i = 0; i < array.length; i++){
+      if(array[i]=== elemento){
+         return true
+      }else{
+         return false
+      }
+   }
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   var sum = 0
+   for(var i = 0; i < arrayOfNums.length; i++){
+      sum += arrayOfNums[i]
+   }
+   return sum
 }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
+   var sum= 0
+   var promedio = 0
+   for(var i = 0; i < resultadosTest.length; i++){
+      sum += resultadosTest[i]
+   }
+   promedio = sum/i
+   return promedio
+
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
+   var max = Math.max(...arrayOfNums);
+   return max
 }
 
 function multiplicarArgumentos() {
