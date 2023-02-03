@@ -16,9 +16,17 @@ function numberOfCharacters(string) {
    // Las letras deben estar en orden alfabético.
    // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
    // Tu código:
-   var nuevoArray = string.split('');
-   
-}
+   var objeto = {};
+   for(var i = 0; i < string.length; i++){
+      if(objeto.hasOwnProperty(string[i])){
+         objeto[string[i]] = objeto[string[i]] + 1;
+      }else{
+         objeto[string[i]] = 1;
+      }
+   }
+   return objeto
+
+}   
 
 function capToFront(string) {
    // Recibes un string con algunas letras en mayúscula y otras en minúscula.
@@ -26,6 +34,8 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
+   var orden=string.split('');
+   return orden.sort()
 }
 
 function asAmirror(frase) {
