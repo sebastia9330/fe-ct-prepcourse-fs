@@ -34,8 +34,16 @@ function capToFront(string) {
    // Retornar el string.
    // [EJEMPLO]: soyHENRY ---> HENRYsoy
    // Tu código:
-   var orden=string.split('');
-   return orden.sort()
+   var  contmayus = "";
+   var  contminus = "";
+   for(var i = 0; i < string.length; i++){
+      if(string[i] === string[i].toLowerCase()){
+         contminus = contminus + string[i]
+      }else{
+         contmayus = contmayus + string[i]
+      }
+   }
+   return contmayus + contminus
 }
 
 function asAmirror(frase) {
@@ -43,18 +51,39 @@ function asAmirror(frase) {
    // La diferencia es que cada palabra estará escrita al inverso.
    // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
    // Tu código:
+   var strarray = frase.split(' ')
+   var arrarend = strarray.map(function(ele){
+      return ele.split('').reverse('').join('');
+   })
+   return arrarend.join(' ');
 }
 
 function capicua(numero) {
    // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
    // Caso contrario: "No es capicua".
    // Tu código:
+   var numString = numero.toString();
+   var resultado = numString.split('').reverse().join('');
+   if(numString === resultado){
+      return "Es capicua";
+   }else{
+      return "No es capicua"
+   }
 }
 
 function deleteAbc(string) {
    // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
    // Retorna el string sin estas letras.
    // Tu código:
+   var newString = "";
+   for(var i = 0; i < string.length; i++){
+      if(string[i] === "a" || string[i] === "b" || string[i] ===  "c"){
+         continue
+      }else{
+         newString += string[i]
+      }
+   }
+   return newString
 }
 
 function sortArray(arrayOfStrings) {
@@ -63,6 +92,19 @@ function sortArray(arrayOfStrings) {
    // de la longitud de cada string.
    // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
    // Tu código:
+   var cambio = true;
+   while(cambio){
+      cambio = false;
+      for(var i = 0; i < arrayOfStrings.length - 1; i++){
+         if(arrayOfStrings[i].length > arrayOfStrings[i+1].length){
+            var aux = arrayOfStrings[i];
+            arrayOfStrings[i] = arrayOfStrings[i+1];
+            arrayOfStrings[i+1] = aux;
+            cambio = true;
+         }
+      }
+   }
+   return arrayOfStrings
 }
 
 function buscoInterseccion(array1, array2) {
